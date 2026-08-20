@@ -102,8 +102,8 @@ int main(int argc, char *argv[]) {
 }
 ```
 # Output:
-<img width="908" height="301" alt="image" src="https://github.com/user-attachments/assets/cbdcab6e-4051-40be-806f-e4f7064e7660" />
 
+<img width="853" height="421" alt="image" src="https://github.com/user-attachments/assets/f91ec6f0-4e9b-4af5-9f79-6b11a68b3d04" />
 
 # Result:
 The programs are executed successfully.
