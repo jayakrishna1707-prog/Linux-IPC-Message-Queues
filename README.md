@@ -95,8 +95,4 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-OUTPUT:
 
-RESULT:
-
-The programs are executed successfully.
