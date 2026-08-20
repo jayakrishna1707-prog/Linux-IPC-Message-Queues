@@ -1,18 +1,20 @@
 # Linux-IPC-Message-Queues
+
 Linux IPC-Message Queues
 
 # AIM:
-To write a C program that receives a message from message queue and display them
+
+To write a C program that receives a message from message queue and display them.
 
 # DESIGN STEPS:
 
 ### Step 1:
 
-Navigate to any Linux environment installed on the system or installed inside a virtual environment like virtual box/vmware or online linux JSLinux (https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&mem=192) or docker.
+Navigate to any Linux environment installed on the system or installed inside a virtual environment like VirtualBox/VMware or online Linux JSLinux or Docker.
 
 ### Step 2:
 
-Write the C Program using Linux message queues API
+Write the C Program using Linux message queues API.
 
 ### Step 3:
 
@@ -44,6 +46,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
+    // Generate key
     key = ftok("progfile", 65);
 
     if (key == -1) {
@@ -51,6 +54,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
+    // Create message queue and return id
     msgid = msgget(key, 0666 | IPC_CREAT);
 
     if (msgid == -1) {
@@ -58,6 +62,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
+    // Print msgid for grading script
     printf("Message Queue ID: %d\n", msgid);
 
     if (strcmp(argv[1], "writer") == 0) {
@@ -84,6 +89,7 @@ int main(int argc, char *argv[]) {
 
         printf("Message received: %s\n", message.mesg_text);
 
+        // Destroy the message queue
         msgctl(msgid, IPC_RMID, NULL);
     }
 
@@ -94,6 +100,3 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-```c
-result
-
