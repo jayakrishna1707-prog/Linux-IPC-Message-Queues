@@ -100,4 +100,9 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-# result:
+```
+# Output:
+
+
+# Result:
+The programs are executed successfully.
